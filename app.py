@@ -16,16 +16,38 @@ except Exception as e:
 THRESHOLD = 0.5838
 
 class TransactionInput(BaseModel):
-    amount: float
-    customer_avg_amount: float
-    customer_median_amount: float
-    customer_device_count: int
-    amount_to_customer_avg: float
-    card_avg_amount: float
-    card_transaction_count: int
-    merchant_category: str
-    merchant_country: str
-    hour: int
+class TransactionInput(BaseModel):
+  transaction_id: str
+  timestamp: str
+  customer_id: str
+  card_id: str
+  device_id: str
+  ip_address: str
+  merchant_id: str
+  merchant_category: str
+  merchant_country: str
+  merchant_city: str
+  merchant_latitude: float
+  merchant_longitude: float
+  transaction_type: str
+  amount: float
+  currency: str
+  hour: int
+  day_of_week: int
+  is_weekend: int
+  Log Amount: float
+  customer_avg_amount: float
+  customer_median_amount: float
+  amount_to_customer_avg: float
+  customer_transaction_count: int
+  customer_by_country: int
+  customer_device_count: int
+  card_transaction_count: int
+  card_avg_amount: float
+  amount_to_card_avg: float
+  device_customer_count: int
+  ip_customer_count: int
+  ip_transaction_count: int
 
 @app.get("/")
 def health_check():
