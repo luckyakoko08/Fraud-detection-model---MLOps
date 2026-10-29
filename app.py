@@ -34,7 +34,7 @@ class TransactionInput(BaseModel):
   hour: int
   day_of_week: int
   is_weekend: int
-  Log Amount: float
+  log_amount: float
   customer_avg_amount: float
   customer_median_amount: float
   amount_to_customer_avg: float
